@@ -12,6 +12,7 @@
     <title>@yield('title')</title>
 
     @include('includes.admin.style')
+    @yield('style')
 
 </head>
 
@@ -58,6 +59,7 @@
 
     <!-- Bootstrap core JavaScript-->
    @include('includes.admin.script')
+   @yield('script')
 
 </body>
 
