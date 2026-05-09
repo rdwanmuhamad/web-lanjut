@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('title')
-    Admin | User
+    Admin | Customer
 @endsection
 
 @section('style')
@@ -16,22 +16,22 @@
         <div id="content">
 
             <!-- Topbar -->
-            @include('includes.admin.navbar')
+             @include('includes.admin.navbar')
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                {{-- <h1 class="h3 mb-2 text-gray-800">Data User</h1> --}}
+                {{-- <h1 class="h3 mb-2 text-gray-800">Data Customer</h1> --}}
 
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        {{-- <h6 class="m-0 font-weight-bold text-primary">Data User</h6> --}}
+                        {{-- <h6 class="m-0 font-weight-bold text-primary">Data Customer</h6> --}}
 
-                        <a href="{{ route('users.create') }}" class="btn btn-primary float-right">Tambah User</a>
+                        <a href="{{ route('customers.create') }}" class="btn btn-primary float-right">Tambah Customer</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -39,9 +39,10 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
+                                        <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Roles</th>
+                                        <th>Alamat</th>
+                                        <th>Nomor Telpon</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,16 +50,17 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    @forelse ($users as $user)
+                                    @forelse ($customers as $customer)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->roles }}</td>
-                                            <td><a href="{{ route('users.edit', $user->id) }}"
+                                            <td>{{ $customer->name }}</td>
+                                            <td>{{ $customer->email }}</td>
+                                            <td>{{ $customer->address }}</td>
+                                            <td>{{ $customer->phone_number }}</td>
+                                            <td><a href="{{ route('customers.edit', $customer->id) }}"
                                                     class="btn btn-warning">Edit</a>
 
-                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
+                                                    <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger">Hapus</button>
@@ -67,9 +69,7 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr>
-                                            <td></td>
-                                        </tr>
+                                        
                                     @endforelse
                                 </tbody>
                             </table>
