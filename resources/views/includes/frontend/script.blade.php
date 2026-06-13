@@ -1,0 +1,11 @@
+<!-- Vendor JS Files -->
+<script src="{{ asset('build/assets/frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('build/assets/frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+<!-- Main JS File -->
+<script src="{{ asset('build/assets/frontend/assets/js/main.js') }}"></script>

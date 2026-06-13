@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CustomerController;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,8 +43,6 @@ Route::prefix('admin')
     });
 
 
-Route::get('/', function(){
-    return view ('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
     
 Auth::routes();
